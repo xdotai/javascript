@@ -3,6 +3,7 @@
 ### usage: ./clone_template.sh qa my_qa_script
 
 PROJECT_NAME=$2
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 if [ -z "$1" ] ; then
     echo 'Sorry! Please define a template'
@@ -20,7 +21,7 @@ case "$1" in
 	if [ $# -eq 1 ]; then
 		echo "No arguments supplied"
 	fi
-	SOURCE="./data_qa/*"
+	SOURCE="${SCRIPT_DIR}/data_qa/*"
 	DESTINATION="${HOME}/xdotai/utils/db/data_qa/${PROJECT_NAME}"
 	;;
 
